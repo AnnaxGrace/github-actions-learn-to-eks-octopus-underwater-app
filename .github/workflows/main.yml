@@ -43,12 +43,12 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
-      - name: Update KubeConfig
-        shell: bash
-        run: |
-          aws eks update-kubeconfig --name ${{ secrets.AWS_CLUSTER_NAME }} --region=us-east-1
+    - name: Update KubeConfig
+      shell: bash
+      run: |
+        aws eks update-kubeconfig --name ${{ secrets.AWS_CLUSTER_NAME }} --region=us-east-1
       
-      - name: Deploy latest image to EKS
-        shell: bash
-        run: kubectl apply -n default -f git-deployment.yml
+    - name: Deploy latest image to EKS
+      shell: bash
+      run: kubectl apply -n default -f git-deployment.yml
 
