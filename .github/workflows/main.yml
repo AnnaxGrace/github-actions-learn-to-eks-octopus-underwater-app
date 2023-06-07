@@ -3,7 +3,7 @@ on:
     branches: [ anna-work ]
   pull_request: 
     branches: [ anna-work ]
-
+#updated name of image repository
 name: AWS ECR push
 
 jobs:
