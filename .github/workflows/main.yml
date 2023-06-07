@@ -5,7 +5,7 @@ on:
     branches: [ anna-work ]
 
 name: AWS ECR push
-
+# test
 jobs:
   deploy:
     name: Deploy
