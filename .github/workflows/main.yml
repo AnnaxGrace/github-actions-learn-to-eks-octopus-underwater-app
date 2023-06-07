@@ -1,7 +1,8 @@
 on:
   push:
     branches: [ anna-work ]
-  pull_request: [ anna-work ]
+  pull_request: 
+    branches: [ anna-work ]
 
 name: AWS ECR push
 
